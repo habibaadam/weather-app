@@ -39,5 +39,13 @@ let currentDay = all_Days[day];
 let hour = rightNow.getHours();
 let minute = rightNow.getMinutes();
 
+if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
 let realTime = document.querySelector(".real");
 realTime.innerHTML = `${currentDay} ${hour}:${minute}`;
