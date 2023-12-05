@@ -1,17 +1,15 @@
 .engulf {
-  margin: 60px auto;
-  max-width: 600px;
-  padding: 30px;
-  border-radius: 9px;
   background: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
 
 body {
-  display: block;
-  margin: 8px;
   font-family: "Ubuntu", sans-serif;
-  background: #F9F7FE;
+  background: #f9f7fe;
 }
 
 main {
@@ -19,14 +17,11 @@ main {
 }
 
 header {
-  display: block;
   border-bottom: 1px solid #f9f7fe;
   padding-bottom: 30px;
 }
 
-strong.bling {
-  color: #d93f6a;
-}
+
 
 .search {
   background-color: #f9f7fe;
@@ -36,12 +31,6 @@ strong.bling {
   padding: 20px;
   width: 75%;
   border-radius: 6px;
-}
-
-.city-now {
-  font-weight: 800;
-  font-size: 35px;
-  font-family: "Ubuntu", sans-serif;
 }
 
 .s-button {
@@ -60,6 +49,16 @@ strong.bling {
   font-weight: 900;
 }
 
+.info {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+strong.bling {
+  color: #f65282;
+}
 .weather {
   font-size: 48px;
   margin: 0;
@@ -88,20 +87,13 @@ strong.bling {
   top: -38px;
 }
 
-.info {
-  color: #5e5b62;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-}
+
 
 footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
   color: rgba(39, 33, 66, 0.4);
-  font-family: "Ubuntu", sans-serif;
 }
 
 a {
