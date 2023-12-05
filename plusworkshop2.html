@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles_2/week2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  </head>
+
+  <body>
+    <div class="engulf">
+      <header>
+        <form id="search-check">
+          <input id="search-me"
+            type="search"
+            class="search"
+            placeholder="Enter a city.."
+            required
+          />
+          <input type="submit" class="s-button" value="Search" />
+        </form>
+      </header>
+      <main class="within">
+        <div class="current-weather">
+          <div>
+            <h1 class="city-now" id="city-now">Paris</h1>
+            <p class="info">
+              <span class="real">Saturday 15:32</span>, moderate rain <br />
+              Humidity: <strong class="bling">87%</strong>, Wind:
+              <strong class="bling">7.2km/h</strong>
+            </p>
+          </div>
+          <div class="weather">
+            <span class="emot">☀️</span>
+            <span class="c-weather" id="currentW">14</span>
+            <span class="intensity">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="info">
+          This project was coded by
+          <a
+            href="https://www.linkedin.com/in/habiba-adam-salisu-570555267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            target="_blank"
+            >Habie</a
+          >
+          and is <a href="https://github.com/habibaadam/Front-End_Workshops/blob/main/plusworkshop2.html" target="_blank"> on GitHub</a> and
+          <a href="https://53xdyx.csb.app/#" target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="javascript_2/week4final.js"></script>
+  </body>
+</html>
