@@ -9,6 +9,7 @@ function getResponse(response) {
     weatherShowing.innerHTML = Math.round(response.data.temperature.current);
   } else {
     //If the city is invalid or does not exist
+    alert("Please enter a valid city name")
     weatherShowing.innerHTML = "NaN";
 
   }
