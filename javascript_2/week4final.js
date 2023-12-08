@@ -4,11 +4,13 @@ let apiKey = "80c24a3665db24tbfafc1c0035ca3o90";
 //Function for manipulating response from API
 function getResponse(response) {
   // Selecting HTML and changing value to actual real temperature
+  let weatherShowing = document.querySelector("#currentW");
   if (response.data && response.data.temperature && response.data.temperature.current !== undefined) {
-    let weatherShowing = document.querySelector("#currentW");
     weatherShowing.innerHTML = Math.round(response.data.temperature.current);
   } else {
-    alert("Please enter a valid city");
+    //If the city is invalid or does not exist
+    weatherShowing.innerHTML = "NaN";
+
   }
 }
 
