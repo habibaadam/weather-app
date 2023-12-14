@@ -90,6 +90,10 @@ main {
   font-size: 28px;
 }
 
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
 
 footer {
   border-top: 1px solid #f9f7fe;
