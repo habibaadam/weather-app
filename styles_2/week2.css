@@ -62,27 +62,31 @@ main {
   font-weight: 500;
 }
 
-strong.bling {
+#humidity {
   color: #f65282;
 }
 
+#wind {
+  color: #f65282;
+}
 .weather {
   display: flex;
 }
 
 .emot {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 
 .c-weather {
   font-size: 88px;
+  line-height: 88px;
   margin-left: 10px;
   font-weight: bold;
 }
 
 .intensity {
-  margin-top: 16px;
+  margin-top: 6px;
   font-size: 28px;
 }
 

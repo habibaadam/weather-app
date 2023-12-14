@@ -1,17 +1,65 @@
 //Function for manipulating response from API
 function getResponse(response) {
-  // Selecting HTML and changing value to actual real temperature
+// Selecting HTML and changing value to actual real temperature
   let cityNow = document.querySelector("#city-now");
   cityNow.innerHTML = response.data.city;
   let weatherShowing = document.querySelector("#currentW");
+
+//Selecting Html of weather description and changing value to actual real description
+  let weatherDescription = document.querySelector("#describe");
+  weatherDescription.innerHTML = response.data.condition.description;
+
+//Selecting Html of humidity and changing value to actual real humidity
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+
+//Selecting Html of wind and changing value to actual real wind
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+
+  //Selecting html of time and changing value to actual real time
+  let time = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+  time.innerHTML = betterDate(date);
+
+//Selecting html of icon and changing value to actual real icon
+  let icon = document.querySelector("#icon");
+  icon.innerHTML = `<img class="emot"
+            src="${response.data.condition.icon_url}">`
+
   if (response.data && response.data.temperature && response.data.temperature.current !== undefined) {
     weatherShowing.innerHTML = Math.round(response.data.temperature.current);
   } else {
     //If the city is invalid or does not exist
-    alert("Please enter a valid city name")
+    alert("Please enter a valid city name");
     weatherShowing.innerHTML = "✘";
-
   }
+}
+
+function betterDate(date) {
+// Changing dates to real time dates
+let all_Days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let currentDay = all_Days[date.getDay()];
+let hour = date.getHours();
+let minute = date.getMinutes();
+
+if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  return `${currentDay} ${hour}:${minute}`;
 }
 
 function citySearch(city) {
@@ -30,30 +78,3 @@ Form1.addEventListener("submit", switchUp);
 
 // Default city shown to user
 citySearch("Accra");
-
-// Changing dates to real time dates
-let rightNow = new Date();
-let day = rightNow.getDay();
-let all_Days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let currentDay = all_Days[day];
-let hour = rightNow.getHours();
-let minute = rightNow.getMinutes();
-
-if (minute < 10) {
-    minute = `0${minute}`;
-  }
-
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-let realTime = document.querySelector(".real");
-realTime.innerHTML = `${currentDay} ${hour}:${minute}`;
