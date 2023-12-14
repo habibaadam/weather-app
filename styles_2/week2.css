@@ -69,6 +69,7 @@ main {
 #wind {
   color: #f65282;
 }
+
 .weather {
   display: flex;
 }
@@ -81,7 +82,6 @@ main {
 .c-weather {
   font-size: 88px;
   line-height: 88px;
-  margin-left: 10px;
   font-weight: bold;
 }
 
