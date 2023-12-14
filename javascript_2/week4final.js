@@ -77,4 +77,4 @@ let Form1 = document.querySelector("#search-check");
 Form1.addEventListener("submit", switchUp);
 
 // Default city shown to user
-citySearch("Accra");
+citySearch("Paris");
