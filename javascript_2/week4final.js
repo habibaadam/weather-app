@@ -15,7 +15,7 @@ function getResponse(response) {
 
 //Selecting Html of wind and changing value to actual real wind
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+  wind.innerHTML = `${response.data.wind.speed}km/h`;
 
   //Selecting html of time and changing value to actual real time
   let time = document.querySelector("#time");
