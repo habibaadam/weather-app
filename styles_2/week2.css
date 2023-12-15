@@ -95,6 +95,39 @@ img {
     overflow: clip;
 }
 
+.forecast-weather {
+  display: flex;
+  color: #000;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.forecast-icon {
+  width: 55px;
+  height: 55px;
+  display: block;
+  text-align: center;
+}
+.forecast-date {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 12px;
+  line-height: 10px;
+  margin-bottom: 10px;
+}
+
+.all_temperatures {
+  text-align: center;
+  font-size: 12px;
+  color: #f65282;
+  display: flex;
+  justify-content: center;
+}
+
+.fc-temp {
+  padding: 0 10px;
+}
+
 footer {
   border-top: 1px solid #f9f7fe;
   padding: 30px 0 0 0;

@@ -76,5 +76,28 @@ function switchUp(event) {
 let Form1 = document.querySelector("#search-check");
 Form1.addEventListener("submit", switchUp);
 
+function showForecast() {
+
+
+  let all_days = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  let formatted_forecast = "";
+
+  all_days.forEach(function(day) {
+    formatted_forecast = formatted_forecast +
+     `<div class="forecast-day">
+            <div class="forecast-date">${day}</div>
+            <div class="forecast-icon">🌥</div>
+            <div class="all_temperatures">
+              <div class="forecast-temp">
+                <strong>24° </strong>
+              </div>
+              <div class="forecast-temp">19° </div>
+            </div>
+          </div>`;
+  })
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = formatted_forecast
+}
 // Default city shown to user
 citySearch("Paris");
+showForecast();
