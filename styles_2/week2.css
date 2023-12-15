@@ -1,9 +1,3 @@
-@media only screen and (max-width: 600px) {
-  .engulf {
-    width: 100%;
-  }
-}
-
 body {
   font-family: "Ubuntu", sans-serif;
   background: #f9f7fe;
