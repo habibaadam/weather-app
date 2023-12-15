@@ -84,25 +84,36 @@ function getForecast(city) {
   axios.get(apiUrl).then(showForecast);
 }
 
+function normalDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let all_Days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return all_Days[day];
+}
 // function for formatting forecast according to days with a loop
 function showForecast(response) {
-  console.log(response);
-  let all_days = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
   let formatted_forecast = "";
 
-  all_days.forEach(function(day) {
-    formatted_forecast = formatted_forecast +
+  response.data.daily.forEach(function(day, dayIndex) {
+    if (dayIndex < 5) {
+       formatted_forecast = formatted_forecast +
      `<div class="forecast-day">
-            <div class="forecast-date">${day}</div>
-            <div class="forecast-icon">🌥</div>
+            <div class="forecast-date">${normalDay(day.time)}</div>
+            <div >
+            <img class="forecast-icon"
+            src="${day.condition.icon_url}" />
+            </div>
             <div class="all_temperatures">
               <div class="forecast-temp">
-                <strong>24° </strong>
+                <strong>${Math.round(day.temperature.maximum)}° </strong>
               </div>
-              <div class="forecast-temp">19° </div>
+              <div class="forecast-temp">${Math.round(day.temperature.minimum)}°</div>
             </div>
           </div>`;
-  })
+  }
+  });
+
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = formatted_forecast
 }
