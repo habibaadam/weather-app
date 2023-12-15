@@ -118,4 +118,4 @@ function showForecast(response) {
   forecast.innerHTML = formatted_forecast
 }
 // Default city shown to user
-citySearch("Paris");
+citySearch("Sydney");
