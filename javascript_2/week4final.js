@@ -34,6 +34,7 @@ function getResponse(response) {
     alert("Please enter a valid city name");
     weatherShowing.innerHTML = "✘";
   }
+  getForecast(response.data.city);
 }
 
 function betterDate(date) {
@@ -76,9 +77,16 @@ function switchUp(event) {
 let Form1 = document.querySelector("#search-check");
 Form1.addEventListener("submit", switchUp);
 
-function showForecast() {
+//function for getting forecast from api
+function getForecast(city) {
+  let apiKey = "80c24a3665db24tbfafc1c0035ca3o90";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
 
-
+// function for formatting forecast according to days with a loop
+function showForecast(response) {
+  console.log(response);
   let all_days = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
   let formatted_forecast = "";
 
@@ -100,4 +108,3 @@ function showForecast() {
 }
 // Default city shown to user
 citySearch("Paris");
-showForecast();
